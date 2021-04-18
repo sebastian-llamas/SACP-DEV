@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Nuevo Prestamo";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel op" id="InfoUser">
+            <div class="panel-body profile-information">
+                <div class="profile-pic text-center">
+                    <img src="~/Custom/images/avatar-mini-2.png" alt="" />
+                </div>
+                <div class="row mt-30">
+                    <div class="col-md-12">
+                        <div class="location-info">
+                            <h5>Nombre: <span id="NameAlum">-</span> </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-md-12">
+                        <div class="location-info">
+                            <h5>Matricula: <span id="matAlum">-</span> </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-md-12">
+                        <div class="location-info">
+                            <h5>Grupo: <span id="GrupoAlum">-</span> </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-md-12">
+                        <div class="location-info">
+                            <h5>Turno: <span id="turnAlum">-</span> </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-md-12">
+                        <div class="location-info">
+                            <h5>Clase: <span id="classAlum">-</span> </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-md-12">
+                        <div class="location-info">
+                            <h5>Tutor: <span id="AdvisorAlum">-</span> </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <input type="text" class="form-control" id="InputUser" placeholder="Ingrese la matricula">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <input type="text" class="form-control w-50" placeholder="Escanear Marbete" id="inpMar" disabled>
+                        <table class="table table-striped table-hover table-bordered" id="AlumTable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Foto</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Descripcion</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="row mb-15">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h5>Ubicacion </h5>
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Salon:</label>
+                                        <div class="col-md-9">
+                                            <input size="16" type="text" value="" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Grupo:</label>
+                                        <div class="col-md-9">
+                                            <input size="16" type="text" value="" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                        </div>
+                        <div class="row mt-15">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3"><button class="btn btn-red ml-60">Cancelar</button></div>
+                            <div class="col-md-3"><button class="btn btn-green ml-60">Guardar</button></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/Prestamos/Index.js"></script>
+}

@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Alumno";
+}
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <div class="panel-body">
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Nombre</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Apellido</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Correo</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Contraseña</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Tipo de usuario</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="source">
+                                <option value="AK">Maestro</option>
+                                <option value="HI">2B</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group last">
+                        <label class="control-label col-md-3">Foto</label>
+                        <div class="col-md-9">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <span class="btn btn-white btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Seleeccionar imagen</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i>  Cambio</span>
+                                        <input type="file" class="default" />
+                                    </span>
+                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remover</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-8">
+                        <button class="btn btn-info">Subir Usuario</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

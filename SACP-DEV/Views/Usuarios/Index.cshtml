@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Alumnos";
+}
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/select2/select2.css" />
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.css" />
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label ">Estado</label>
+                        <select class="form-control m-bot15 w-50">
+                            <option value="0">Activo</option>
+                            <option value="0">Desactivado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">Tipos de usuario:</label>
+                        <br />
+                        <select id="e2" class="populate placeholder w-80">
+                            <option value="AK">SuperUsuario</option>
+                            <option value="HI">Admin</option>
+                            <option value="CA">Usuario</option>
+                            <option value="CA">Docente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary mt-20">Consultar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <div class="panel-body">
+                <table class="table table-bordered" id="UserTable">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo Electronico</th>
+                            <th>Tipos</th>
+                            <th>Estado</th>
+                            <th>Fecha de alta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td>Andres </td>
+                            <td>Flores Gutierrez</td>
+                            <td>flores@outlook.com</td>
+                            <td>User</td>
+                            <td>Activo</td>
+                            <td>15/03/2021</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Sebastian</td>
+                            <td>Llamas Zamudio</td>
+                            <td>llamas@gmail.com</td>
+                            <td>SuperUser</td>
+                            <td>Activo</td>
+                            <td>10/03/2021</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Benjamin</td>
+                            <td>Ojeda Estrada</td>
+                            <td>Ojeda@gmail.com</td>
+                            <td>Docente</td>
+                            <td>Desactivado</td>
+                            <td>01/03/2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="NewUsuario" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Usuario</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputNombre" class="col-lg-4 col-sm-4 control-label">Nombre</label>
+                        <div class="col-lg-8 w-50">
+                            <input type="text" class="form-control" id="InpName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputApellido" class="col-lg-4 col-sm-4 control-label">Apellido</label>
+                        <div class="col-lg-8 w-50">
+                            <input type="text" class="form-control" id="InpApellido">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-4 col-sm-4 control-label">Correo Electronico</label>
+                        <div class="col-lg-8 w-50">
+                            <input type="email" class="form-control" id="InpEmail">
+                        </div>
+                    </div>
+                    <div class="form-group" id="ContPass">
+                        <label for="inputEmail1" class="col-lg-4 col-sm-4 control-label">Contraseña</label>
+                        <div class="col-lg-8 w-50">
+                            <input type="password" class="form-control" id="InpPass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-4 col-sm-4 control-label">Tipo</label>
+                        <div class="col-lg-8 w-50">
+                            <select class="form-control" id="SlcTipo">
+                                <option value="">-</option>
+                                <option value="SuperUser">SuperUser</option>
+                                <option value="Admin">Admin</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 col-sm-4 control-label">Imagen</label>
+                        <div class="controls col-md-8">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <span class="btn btn-white btn-file">
+                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Seleccionar Archivo</span>
+                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Cambiar</span>
+                                    <input type="file" class="default" id="InpFile" />
+                                </span>
+                                <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-bluee">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+    <script type="text/javascript" src="~/Custom/js/select2/select2.js"></script>
+    <script src="~/Custom/js/jquery.validate.min.js"></script>
+    <script src="~/js/Usuarios/Index.js"></script>
+}

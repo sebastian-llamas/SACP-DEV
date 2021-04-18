@@ -1,0 +1,218 @@
+﻿@{
+    ViewData["Title"] = "Alumnos";
+}
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/select2/select2.css" />
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.css" />
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label ">Estado</label>
+                        <select class="form-control m-bot15 w-50">
+                            <option value="0">Activo</option>
+                            <option value="0">Desactivado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">Alumno</label>
+                        <br />
+                        <select id="e2" class="populate placeholder w-80">
+                            <option value="AK">031117 Llamas Zamudio Sebastian</option>
+                            <option value="HI">074511 Benal Higuera Manuel</option>
+                            <option value="CA">045445 Barajas Puerto Alejandro</option>
+                            <option value="NV">034648 Hernandez Perez Efren</option>
+                            <option value="OR">033531 Llamas Zamudio Victor</option>
+                            <option value="WA">094644 Rios Mondragon Fernando </option>
+                            <option value="AZ">034574 Fernandez Tenorio Pedro</option>
+                            <option value="CO">077262 Estrada Gutierrez Sebastian</option>
+                            <option value="ID">044457 Martinez Ojeda cesar</option>
+                            <option value="MT">039856 Jimenes Perez Joel</option>
+                            <option value="NE">031443 Medina Saucedo Juan</option>
+                            <option value="NM">031411 Mercado Cruz Alejandro</option>
+                            <option value="ND">031117 Flores Gutierrez Andres</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label ">Alumno</label>
+                        <br />
+                        <select id="e3" class="populate placeholder w-100">
+                            <option value="AK">1A</option>
+                            <option value="HI">1B</option>
+                            <option value="CA">1C</option>
+                            <option value="NV">1D</option>
+                            <option value="OR">1E</option>
+                            <option value="WA">2A</option>
+                            <option value="AZ">2B</option>
+                            <option value="CO">2C</option>
+                            <option value="ID">2D</option>
+                            <option value="MT">2E</option>
+                            <option value="NE">3A</option>
+                            <option value="NM">3B</option>
+                            <option value="ND">3C</option>
+                            <option value="ND">3D</option>
+                            <option value="ND">3E</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary mt-20">Consultar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <div class="panel-body">
+                <table class="table table-bordered" id="AlumTable">
+                    <thead>
+                        <tr>
+                            <th>Matricula</th>
+                            <th>Nombre</th>
+                            <th>Grupo</th>
+                            <th>Correo Electronico</th>
+                            <th>Telefono</th>
+                            <th>Alta por:</th>
+                            <th>Fecha de alta</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>031768</td>
+                            <td>Andres Flores Gutierrez</td>
+                            <td>1A</td>
+                            <td>flores@outlook.com</td>
+                            <td>664500324</td>
+                            <td>Docente 1</td>
+                            <td>15/03/2021</td>
+                        </tr>
+                        <tr>
+                            <td>03147845</td>
+                            <td>Sebastian Llamas Zamudio</td>
+                            <td>2B</td>
+                            <td>llamas@gmail.com</td>
+                            <td>664500324</td>
+                            <td>Docente 1</td>
+                            <td>10/03/2021</td>
+                        </tr>
+                        <tr>
+                            <td>0464154</td>
+                            <td>Benjamon Ojeda Estrada</td>
+                            <td>1A</td>
+                            <td>Ojeda@gmail.com</td>
+                            <td>664500324</td>
+                            <td>Docente 1</td>
+                            <td>01/03/2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="NewAlumno" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Alumno</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Matricula</label>
+                        <div class="col-lg-10 w-50">
+                            <input type="text" class="form-control" id="InpMatricula">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Nombre</label>
+                        <div class="col-lg-10 w-50">
+                            <input type="text" class="form-control" id="InpNombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Apellido</label>
+                        <div class="col-lg-10 w-50">
+                            <input type="text" class="form-control" id="InpApellido">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Correo Electronico</label>
+                        <div class="col-lg-10 w-50">
+                            <input type="email" class="form-control" id="InpEmail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Telefono</label>
+                        <div class="col-lg-10 w-50">
+                            <input type="text" class="form-control" id="InpTelefono">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Grupo</label>
+                        <div class="col-lg-10 w-50">
+                            <select class="form-control" id="SlcGroup">
+                                <option value="">-</option>
+                                <option value="1A">1A</option>
+                                <option value="2B">2B</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Docente</label>
+                        <div class="col-lg-10 w-50">
+                            <select class="form-control" id="SlcDocente">
+                                <option value="">-</option>
+                                <option value="Docente 1">Docente 1</option>
+                                <option value="Docente 2">Docente 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-2 control-label">Imagen</label>
+                        <div class="controls col-md-9">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <span class="btn btn-white btn-file">
+                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Seleccionar Archivo</span>
+                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Cambiar</span>
+                                    <input type="file" class="default" id="InpFile" />
+                                </span>
+                                <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-bluee">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+    <script type="text/javascript" src="~/Custom/js/select2/select2.js"></script>
+    <script src="~/Custom/js/jquery.validate.min.js"></script>
+    <script src="~/js/Usuarios/ListAlumno.js"></script>
+}

@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Prestamos Activos";
+}
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/select2/select2.css" />
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/bootstrap-datepicker/css/datepicker.css" />
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Fecha</label>
+                        <br />
+                        <input class="form-control default-date-picker" id="InpFecha" size="16" type="text" value="" />
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="control-label">Estado</label>
+                        <select class="form-control m-bot15 w-50">
+                            <option value="0">Activo</option>
+                            <option value="0">Entregado</option>
+                            <option value="0">Eliminado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Usuario</label>
+                        <br />
+                        <select id="e2" class="populate placeholder w-80">
+                            <option value="AK">031117 Llamas Zamudio Sebastian</option>
+                            <option value="HI">074511 Benal Higuera Manuel</option>
+                            <option value="CA">045445 Barajas Puerto Alejandro</option>
+                            <option value="NV">034648 Hernandez Perez Efren</option>
+                            <option value="OR">033531 Llamas Zamudio Victor</option>
+                            <option value="WA">094644 Rios Mondragon Fernando </option>
+                            <option value="AZ">034574 Fernandez Tenorio Pedro</option>
+                            <option value="CO">077262 Estrada Gutierrez Sebastian</option>
+                            <option value="ID">044457 Martinez Ojeda cesar</option>
+                            <option value="MT">039856 Jimenes Perez Joel</option>
+                            <option value="NE">031443 Medina Saucedo Juan</option>
+                            <option value="NM">031411 Mercado Cruz Alejandro</option>
+                            <option value="ND">031117 Flores Gutierrez Andres</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary mt-20">Consultar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <div class="panel-body">
+                <table class="table  table-bordered" id="PrestamoTable">
+                    <thead>
+                        <tr>
+                            <th>Num Prestamo</th>
+                            <th>Solicito</th>
+                            <th>Fecha</th>
+                            <th>Cantidad de articulos</th>
+
+                            <th>Entrego</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row_1">
+                            <td>1</td>
+                            <td>Alumno1</td>
+                            <td>15/03/2021</td>
+                            <td>1</td>
+                            <td>Sebastian Llamas</td>
+                            <td class="text-center">
+                                <span class="label label-success">Entregado</span>
+                            </td>
+                        </tr>
+                        <tr id="row_2">
+                            <td>2</td>
+                            <td>Alumno1</td>
+                            <td>15/03/2021</td>
+                            <td>3</td>
+                            <td>Sebastian Llamas</td>
+                            <td class="text-center">
+                                <span class="label label-warning">En curso</span>
+                            </td>
+                        </tr>
+                        <tr id="row_2">
+                            <td>3</td>
+                            <td>Alumno1</td>
+                            <td>15/03/2021</td>
+                            <td>5</td>
+                            <td>Sebastian Llamas</td>
+                            <td class="text-center">
+                                <span class="label label-success">Entregado</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="SetItems" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Items</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12"> Information Student and loan</div>
+                    <div class="col-md-12"> table Items ans status loan</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+    <script type="text/javascript" src="~/Custom/js/select2/select2.js"></script>
+    <script type="text/javascript" src="~/Custom/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Custom/js/jquery.validate.min.js"></script>
+    <script src="~/js/Prestamos/PrestamosActivos.js"></script>
+}

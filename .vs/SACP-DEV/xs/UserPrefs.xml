@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{3A7B22AC-A2BC-463C-A6E1-E3A07B5007FD}|Default">
+  <MonoDevelop.Ide.ItemProperties.SACP-DEV PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SACP-DEV/wwwroot/js/Prestamos/PrestamosActivos.js">
+    <Files>
+      <File FileName="SACP-DEV/Program.cs" Line="16" Column="1" />
+      <File FileName="SACP-DEV/Views/Prestamos/PrestamoActivos.cshtml" Line="16" Column="51" />
+      <File FileName="SACP-DEV/wwwroot/js/Prestamos/PrestamosActivos.js" Line="44" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SACP-DEV" expanded="True">
+            <Node name="SACP-DEV" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/macminihs/Projects/SACP-DEV/SACP-DEV/Controllers/HomeController.cs" relfile="SACP-DEV/Controllers/HomeController.cs" line="29" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
