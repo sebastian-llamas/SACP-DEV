@@ -102,7 +102,6 @@
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.csprojAssemblyReference.cache
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.AssemblyInfoInputs.cache
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.AssemblyInfo.cs
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.csproj.CoreCompileInputs.cache
@@ -114,7 +113,11 @@
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.RazorCoreGenerate.cache
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
+/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Prestamos/HistorialPrestamos.cshtml.g.cs
+/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Prestamos/Index.cshtml.g.cs
+/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Prestamos/PrestamoActivos.cshtml.g.cs
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
+/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Login.cshtml.g.cs
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Usuarios/Alumno.cshtml.g.cs
@@ -132,7 +135,4 @@
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.dll
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.pdb
 /Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.genruntimeconfig.cache
-/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Prestamos/HistorialPrestamos.cshtml.g.cs
-/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Prestamos/Index.cshtml.g.cs
-/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Prestamos/PrestamoActivos.cshtml.g.cs
-/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Login.cshtml.g.cs
+/Users/macminihs/Projects/SACP-DEV/SACP-DEV/obj/Debug/netcoreapp3.1/SACP-DEV.csprojAssemblyReference.cache

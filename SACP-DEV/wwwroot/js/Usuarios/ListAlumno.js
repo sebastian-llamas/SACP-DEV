@@ -28,8 +28,29 @@
                 text: 'Eliminar',
                 className: 'btn-red mt-10',
                 action: function (e, dt, node, config) {
-                    DeleteRow();
+
+                    Swal.fire({
+                        title: 'Seguro?',
+                        text: "Eliminacion de Alumno!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#1CB7A0',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, Eliminar!',
+                        cancelButtonText: 'No, cancelar!',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            DeleteRow();
+                        }
+                    });
+
+                    
                 }
+            },
+            {
+                extend: 'excel',
+                text: 'Excel',
+                className: 'btn-green mt-10'
             }
         ],
         initComplete: function () {

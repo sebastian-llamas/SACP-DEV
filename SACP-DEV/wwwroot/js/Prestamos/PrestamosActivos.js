@@ -26,6 +26,11 @@
                 action: function (e, dt, node, config) {
                    
                 }
+            },
+            {
+            extend: 'excel',
+            text: 'Excel',
+            className: 'btn-green mt-10'
             }
         ],
         initComplete: function () {
@@ -59,4 +64,40 @@
             $('.btn-blue').prop('disabled', true);
         }
     }
+
+
+
+    var tableItems = $("#ItemsTable").DataTable({
+        
+        dom: 'Bfrtip',
+        bPaginate: true,
+        bLengthChange: false,
+        bInfo: false,
+        
+        language: { search: "<b>Buscar</b>" },
+        buttons: [
+            {
+                text: 'Nuevo',
+                className: 'btn-blue mt-10',
+                action: function (e, dt, node, config) {
+
+                }
+            },
+            {
+                text: 'Terminar',
+                className: 'btn-red mt-10',
+                action: function (e, dt, node, config) {
+
+                }
+            }
+        ],
+        initComplete: function () {
+            $('.btn-red').prop('disabled', true);
+            $('.btn-blue').prop('disabled', true);
+        }
+    });
 });
+
+
+
+

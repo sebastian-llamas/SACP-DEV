@@ -28,8 +28,27 @@
                 text: 'Eliminar',
                 className: 'btn-red mt-10',
                 action: function (e, dt, node, config) {
-                    DeleteRow();
+                    Swal.fire({
+                        title: 'Seguro?',
+                        text: "Eliminacion de Alumno!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#1CB7A0',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, Eliminar!',
+                        cancelButtonText: 'No, cancelar!',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            DeleteRow();
+                        }
+                    });
+                   
                 }
+            },
+            {
+                extend: 'excel',
+                text: 'Excel',
+                className: 'btn-green mt-10'
             }
         ],
         columnDefs: [
@@ -91,12 +110,13 @@
     }
 
     function Editar() {
-        $("#ContPass").addclass("hidden");
+        //$("#ContPass").addClass("hidden");
         $('#NewUsuario').modal('toggle');
         ResetInputs();
         var dataRow = table.rows('.selected').data().toArray();
         console.table(table.rows('.selected').data().toArray());
 
+        
         $('#InpName').val(dataRow[0][1]);
         $('#InpApellido').val(dataRow[0][2]);
         $('#InpEmail').val(dataRow[0][3]);

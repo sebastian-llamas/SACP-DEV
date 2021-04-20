@@ -9,38 +9,37 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-horizontal">
-                            <div class="form-group row">
-                                <label class="control-label col-md-6">Fecha</label>
-                                <div class="input-group input-large col-md-6" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
-                                    <input type="text" class="form-control dpd1" name="from" />
-                                    <span class="input-group-addon">A</span>
-                                    <input type="text" class="form-control dpd2" name="to" />
-                                </div>
-                            </div>
-                        </div>
+                        <label>Fecha</label>
+                        <br />
+                        <input class="form-control default-date-picker" id="InpFecha" size="16" type="text" value="" />
                     </div>
                     <div class="col-md-3">
-                        <div class="form-horizontal">
-                            <div class="form-group row">
-                                <label class="control-label col-md-3">Estado</label>
-                                <select class="form-control m-bot15 w-50 col-md-6">
-                                    <option value="0">Activo</option>
-                                    <option value="0">Entregado</option>
-                                    <option value="0">Eliminado</option>
-                                </select>
-                            </div>
-                        </div>
+                        <label class="control-label">Estado</label>
+                        <br />
+                        <select class="form-control m-bot15 w-50">
+                            <option value="0">Activo</option>
+                            <option value="0">Entregado</option>
+                            <option value="0">Eliminado</option>
+                        </select>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-horizontal">
-                            <div class="form-group row">
-                                <label class="control-label col-md-4">Usuario</label>
-                                <div class="col-md-7">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
+                        <label class="control-label">Usuario</label>
+                        <br />
+                        <select id="e2" class="populate placeholder w-80">
+                            <option value="AK">031117 Llamas Zamudio Sebastian</option>
+                            <option value="HI">074511 Benal Higuera Manuel</option>
+                            <option value="CA">045445 Barajas Puerto Alejandro</option>
+                            <option value="NV">034648 Hernandez Perez Efren</option>
+                            <option value="OR">033531 Llamas Zamudio Victor</option>
+                            <option value="WA">094644 Rios Mondragon Fernando </option>
+                            <option value="AZ">034574 Fernandez Tenorio Pedro</option>
+                            <option value="CO">077262 Estrada Gutierrez Sebastian</option>
+                            <option value="ID">044457 Martinez Ojeda cesar</option>
+                            <option value="MT">039856 Jimenes Perez Joel</option>
+                            <option value="NE">031443 Medina Saucedo Juan</option>
+                            <option value="NM">031411 Mercado Cruz Alejandro</option>
+                            <option value="ND">031117 Flores Gutierrez Andres</option>
+                        </select>
                     </div>
                     <div class="col-md-2">
                         <button class="btn btn-primary">Consultar</button>
@@ -55,55 +54,159 @@
         <section class="panel">
             <header class="panel-heading">Historial De Prestamos</header>
             <div class="panel-body">
-                <table class="table table-striped table-hover table-bordered" id="PrestamoTable">
+                <table class="table table-bordered" id="PrestamoTable">
                     <thead>
                         <tr>
-                            <th>Fecha</th>
-                            <th>Articulo</th>
+                            <th>Num Prestamo</th>
                             <th>Solicito</th>
+                            <th>Fecha</th>
+                            <th>Cantidad de articulos</th>
+
                             <th>Entrego</th>
                             <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr id="row_1">
-                            <td>15/03/2021</td>
-                            <td>MAC 2012</td>
+                            <td>1</td>
                             <td>Alumno1</td>
+                            <td>15/03/2021</td>
+                            <td>1</td>
                             <td>Sebastian Llamas</td>
                             <td class="text-center">
                                 <span class="label label-success">Entregado</span>
                             </td>
                         </tr>
                         <tr id="row_2">
-                            <td>15/03/2021</td>
-                            <td>MAC 2012</td>
+                            <td>2</td>
                             <td>Alumno1</td>
+                            <td>15/03/2021</td>
+                            <td>3</td>
                             <td>Sebastian Llamas</td>
                             <td class="text-center">
                                 <span class="label label-success">Entregado</span>
                             </td>
                         </tr>
                         <tr id="row_2">
-                            <td>15/03/2021</td>
-                            <td>MAC 2012</td>
+                            <td>3</td>
                             <td>Alumno1</td>
+                            <td>15/03/2021</td>
+                            <td>5</td>
                             <td>Sebastian Llamas</td>
                             <td class="text-center">
                                 <span class="label label-success">Entregado</span>
                             </td>
                         </tr>
-                    </tbody>
+                     </tbody>
                 </table>
             </div>
         </section>
     </div>
 </div>
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="SetItems" class="modal fade no-scro">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">Items</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="profile-pic text-center">
+                                    <img class="w-40" src="~/Custom/images/user.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="control-label">Matricula</label>
+                                        <br />
+                                        <input value="0317114867" class="form-control" disabled />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label">Nombre</label>
+                                        <br />
+                                        <input value="Sebastian Isai" class="form-control" disabled />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label">Apellido</label>
+                                        <br />
+                                        <input value="LLamas Zamudio" class="form-control" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-10">
+                            <div class="col-md-4">
+                                <label class="control-label">Grupo</label>
+                                <br />
+                                <input value="10-B" class="form-control" disabled />
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Ubicacion</label>
+                                <br />
+                                <input value="Salon 350" class="form-control" disabled />
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Atendido por:</label>
+                                <br />
+                                <input value="Sebastian LLamas" class="form-control" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-20">
+                        <table class="table  table-bordered w-100" id="ItemsTable">
+                            <thead>
+                                <tr>
+                                    <th>Num Producto</th>
+                                    <th>Foto</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Atendido por</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="row_2">
+                                    <td>255121</td>
+                                    <td><img src="~/Custom/images/mac-img.jpeg" style="width:110px;height:70px;" /></td>
+                                    <td>Mac 2012</td>
+                                    <td>Mac 2012 late Silver</td>
+                                    <td>Sebastian Llamas</td>
+                                    <td class="text-center">
+                                        <span class="label label-danger">En Uso</span>
+                                    </td>
+                                </tr>
+                                <tr id="row_4">
+                                    <td>545121</td>
+                                    <td><img src="~/Custom/images/mouse.jpeg" style="width:110px;height:70px;" /></td>
+                                    <td>Mouse Alambrico</td>
+                                    <td>Mouse logitec</td>
+                                    <td>Sebastian Llamas</td>
+                                    <td class="text-center">
+                                        <span class="label label-danger">En Uso</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 @section Scripts {
     <script src="~/Custom/plugins/DataTables/Select-1.3.2/js/select.bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Custom/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="~/Custom/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" src="~/Custom/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" src="~/Custom/js/bootstrap-daterangepicker/moment.min.js"></script>
-    <script src="~/js/Prestamos/HistorialPrestamos.js"></script>
+     <script type="text/javascript" src="~/Custom/js/select2/select2.js"></script>
+    <script src="~/js/Prestamos/HistorialPrestamos.js?@DateTime.Now.Millisecond"></script>
 }

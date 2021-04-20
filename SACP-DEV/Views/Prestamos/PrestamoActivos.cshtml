@@ -108,18 +108,96 @@
 
 
 
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="SetItems" class="modal fade">
-    <div class="modal-dialog">
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="SetItems" class="modal fade no-scro">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                 <h4 class="modal-title">Items</h4>
             </div>
             <div class="modal-body">
-
                 <div class="row">
-                    <div class="col-md-12"> Information Student and loan</div>
-                    <div class="col-md-12"> table Items ans status loan</div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="profile-pic text-center">
+                                    <img class="w-40" src="~/Custom/images/user.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="control-label">Matricula</label>
+                                        <br />
+                                        <input value="0317114867" class="form-control" disabled/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label">Nombre</label>
+                                        <br />
+                                        <input value="Sebastian Isai" class="form-control" disabled/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label">Apellido</label>
+                                        <br />
+                                        <input value="LLamas Zamudio" class="form-control"  disabled/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-10">
+                            <div class="col-md-4">
+                                <label class="control-label">Grupo</label>
+                                <br />
+                                <input value="10-B" class="form-control" disabled />
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Ubicacion</label>
+                                <br />
+                                <input value="Salon 350" class="form-control" disabled />
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label">Atendido por:</label>
+                                <br />
+                                <input value="Sebastian LLamas" class="form-control" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table  table-bordered w-100" id="ItemsTable">
+                            <thead>
+                                <tr>
+                                    <th>Num Producto</th>
+                                    <th>Foto</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Atendido por</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="row_2">
+                                    <td>255121</td>
+                                    <td><img src="~/Custom/images/mac-img.jpeg" style="width:110px;height:70px;" /></td>
+                                    <td>Mac 2012</td>
+                                    <td>Mac 2012 late Silver</td>
+                                    <td>Sebastian Llamas</td>
+                                    <td class="text-center">
+                                        <span class="label label-danger">En Uso</span>
+                                    </td>
+                                </tr>
+                                <tr id="row_4">
+                                    <td>545121</td>
+                                    <td><img src="~/Custom/images/mouse.jpeg" style="width:110px;height:70px;" /></td>
+                                    <td>Mouse Alambrico</td>
+                                    <td>Mouse logitec</td>
+                                    <td>Sebastian Llamas</td>
+                                    <td class="text-center">
+                                        <span class="label label-danger">En Uso</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>
