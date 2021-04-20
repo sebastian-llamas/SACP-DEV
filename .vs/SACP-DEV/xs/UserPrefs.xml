@@ -1,16 +1,35 @@
 ﻿<Properties StartupConfiguration="{3A7B22AC-A2BC-463C-A6E1-E3A07B5007FD}|Default">
   <MonoDevelop.Ide.ItemProperties.SACP-DEV PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SACP-DEV/wwwroot/js/Prestamos/PrestamosActivos.js">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="SACP-DEV/Program.cs" Line="16" Column="1" />
-      <File FileName="SACP-DEV/Views/Prestamos/PrestamoActivos.cshtml" Line="16" Column="51" />
-      <File FileName="SACP-DEV/wwwroot/js/Prestamos/PrestamosActivos.js" Line="44" Column="40" />
+      <File FileName="SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Usuarios/Alumno.cshtml.g.cs" Line="6" Column="2" IsPinned="True" />
+      <File FileName="SACP-DEV/wwwroot/js/Prestamos/HistorialPrestamos.js" Line="70" Column="13" />
+      <File FileName="SACP-DEV/Views/Prestamos/HistorialPrestamos.cshtml" Line="162" Column="48" />
+      <File FileName="SACP-DEV/Views/Prestamos/PrestamoActivos.cshtml" Line="105" Column="11" />
+      <File FileName="SACP-DEV/wwwroot/js/Prestamos/PrestamosActivos.js" Line="98" Column="8" />
+      <File FileName="SACP-DEV/wwwroot/Custom/css/style.css" Line="5783" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SACP-DEV" expanded="True">
-            <Node name="SACP-DEV" expanded="True" />
+            <Node name="SACP-DEV" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Prestamos" expanded="True" />
+                <Node name="Usuarios" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="Custom" expanded="True">
+                  <Node name="css" expanded="True" />
+                </Node>
+                <Node name="js" expanded="True">
+                  <Node name="Prestamos" expanded="True">
+                    <Node name="HistorialPrestamos.js" selected="True" />
+                  </Node>
+                  <Node name="Usuarios" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
