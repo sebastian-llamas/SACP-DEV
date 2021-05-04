@@ -90,7 +90,7 @@
                                 <span>Proveedores </span>
                             </a>
                             <ul class="sub">
-                                <li><a href="#">Nuevos Proveedor</a></li>
+                                <li class="lk"><a asp-area="" asp-controller="Proveedores" asp-action="NuevoProveedor">Nuevos Proveedor</a></li>
                                 <li><a href="#">Lista de Proveedores</a></li>
                             </ul>
                         </li>
@@ -101,8 +101,8 @@
                             </a>
                             <ul class="sub">
                                 <li><a href="#">Nuevo Equipo</a></li>
-                                <li><a href="#">Lista de Equipo</a></li>
-                                <li><a href="#">Historial de Equipos</a></li>
+                                <li class="lk"><a asp-area="" asp-controller="Equipos" asp-action="ListEquipo">Lista de Equipo</a></li>
+                                <!--<li><a href="#">Historial de Equipos</a></li>-->
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -111,7 +111,7 @@
                                 <span>Facturas </span>
                             </a>
                             <ul class="sub">
-                                <li><a href="#">Nuevos Facturas</a></li>
+                                <li class="lk"><a asp-area="" asp-controller="Facturas" asp-action="NuevaFactura">Nuevos Facturas</a></li>
                                 <li><a href="#">Facturas</a></li>
                             </ul>
                         </li>

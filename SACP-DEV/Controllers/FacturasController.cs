@@ -15,5 +15,11 @@ namespace SACP_DEV.Controllers
         {
             return View();
         }
+
+
+        public IActionResult NuevaFactura()
+        {
+            return View();
+        }
     }
 }

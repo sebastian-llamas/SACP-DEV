@@ -5818,3 +5818,8 @@ right: -1px;
 .no-scro {
     overflow-y:hidden !important;
 }
+
+
+.Info-Container {
+    background: #babdbe !important;
+}

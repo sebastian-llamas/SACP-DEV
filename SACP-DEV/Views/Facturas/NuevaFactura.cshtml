@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Nuevo Factura";
+}
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/select2/select2.css" />
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="~/Custom/plugins/dropzone/dist/dropzone.css" />
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <div class="panel-body">
+                <div class="row mb-15 mt-15">
+
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Descripcion</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Presupuesto Inicial</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Presupuesto Modificado</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Total</label>
+                        <div class="col-md-4">
+                            <input size="16" type="text" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Partida</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="source">
+                                <option value="AK">1</option>
+                                <option value="HI">2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group last">
+                        <label class="control-label col-md-3">Foto</label>
+                        <div class="col-md-9">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <span class="btn btn-white btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Seleeccionar imagen</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                        <input type="file" class="default" />
+                                    </span>
+                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-8">
+                        <button class="btn btn-info">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Custom/plugins/dropzone/dist/dropzone.js"></script>
+    <script type="text/javascript" src="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+    <script src="~/js/Usuarios/NuevoAlumno.js?@DateTime.Now.Millisecond"></script>
+}

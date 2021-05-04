@@ -10,7 +10,7 @@ namespace SACP_DEV.Controllers
 {
     public class HomeController : Controller
     {
-        private DataContext db = new DataContext();
+        
 
         public IActionResult Index()
         {

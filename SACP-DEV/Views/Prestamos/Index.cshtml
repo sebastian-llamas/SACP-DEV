@@ -1,7 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Nuevo Prestamo";
 }
-
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Custom/js/select2/select2.css" />
+}
 <div class="row">
     <div class="col-md-3">
         <div class="panel op" id="InfoUser">
@@ -65,7 +67,8 @@
             <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-body">
-                        <input type="text" class="form-control" id="InputUser" placeholder="Ingrese la matricula">
+                        @Html.DropDownList("e2", (IEnumerable<SelectListItem>)ViewBag.AlumnosSLCT as List<SelectListItem>,
+                           "Selecciona un Usuario", new { @class = "populate placeholder w-80" })
                     </div>
                 </div>
             </div>
@@ -110,7 +113,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Salon:</label>
                                         <div class="col-md-9">
-                                            <input size="16" type="text" value="" class="form-control">
+                                            <input size="16" type="text" value="" class="form-control" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +123,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Grupo:</label>
                                         <div class="col-md-9">
-                                            <input size="16" type="text" value="" class="form-control">
+                                            <input size="16" type="text" value="" class="form-control" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +135,7 @@
                         <div class="row mt-15">
                             <div class="col-md-3"></div>
                             <div class="col-md-3"><button class="btn btn-red ml-60">Cancelar</button></div>
-                            <div class="col-md-3"><button class="btn btn-green ml-60">Guardar</button></div>
+                            <div class="col-md-3"><button class="btn btn-green ml-60" disabled>Guardar</button></div>
                             <div class="col-md-3"></div>
                         </div>
                     </div>
@@ -142,5 +145,8 @@
     </div>
 </div>
 @section Scripts {
-    <script src="~/js/Prestamos/Index.js"></script>
+    <script type="text/javascript" src="~/Custom/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+    <script type="text/javascript" src="~/Custom/js/select2/select2.js"></script>
+    <script src="~/Custom/js/jquery.validate.min.js"></script>
+    <script src="~/js/Prestamos/Index.js?@DateTime.Now.Millisecond"></script>
 }

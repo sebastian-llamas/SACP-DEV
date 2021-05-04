@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Alumnos";
+    ViewData["Title"] = "Usuarios";
 }
 @section Styles {
     <link rel="stylesheet" type="text/css" href="~/Custom/js/select2/select2.css" />
@@ -21,10 +21,8 @@
                         <label class="control-label ">Tipos de usuario:</label>
                         <br />
                         <select id="e2" class="populate placeholder w-80">
-                            <option value="AK">SuperUsuario</option>
-                            <option value="HI">Admin</option>
-                            <option value="CA">Usuario</option>
-                            <option value="CA">Docente</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Usuario</option>
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -51,41 +49,18 @@
                         <tr>
                             <th>Id</th>
                             <th>Nombre</th>
-                            <th>Apellido</th>
                             <th>Correo Electronico</th>
-                            <th>Tipos</th>
                             <th>Estado</th>
+                            <th>Tipos</th>
+                            <th>Creado por</th>
                             <th>Fecha de alta</th>
+                            <th>apellido</th>
+                            <th>name</th>
+                            <th>status</th>
+                            <th>typeUser</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>3</td>
-                            <td>Andres </td>
-                            <td>Flores Gutierrez</td>
-                            <td>flores@outlook.com</td>
-                            <td>User</td>
-                            <td>Activo</td>
-                            <td>15/03/2021</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Sebastian</td>
-                            <td>Llamas Zamudio</td>
-                            <td>llamas@gmail.com</td>
-                            <td>SuperUser</td>
-                            <td>Activo</td>
-                            <td>10/03/2021</td>
-                        </tr>
-                        <tr>
-                            <td>05</td>
-                            <td>Benjamin</td>
-                            <td>Ojeda Estrada</td>
-                            <td>Ojeda@gmail.com</td>
-                            <td>Docente</td>
-                            <td>Desactivado</td>
-                            <td>01/03/2021</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -104,8 +79,9 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" role="form">
+                <div class="form-horizontal" role="form">
                     <div class="form-group">
+                        <input type="text" class="hidden" id="inpId"/>
                         <label for="inputNombre" class="col-lg-4 col-sm-4 control-label">Nombre</label>
                         <div class="col-lg-8 w-50">
                             <input type="text" class="form-control" id="InpName">
@@ -134,9 +110,8 @@
                         <div class="col-lg-8 w-50">
                             <select class="form-control" id="SlcTipo">
                                 <option value="">-</option>
-                                <option value="SuperUser">SuperUser</option>
-                                <option value="Admin">Admin</option>
-                                <option value="User">User</option>
+                                <option value="1">Admin</option>
+                                <option value="2">User</option>
                             </select>
                         </div>
                     </div>
@@ -156,10 +131,10 @@
                     </div>
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
-                            <button type="submit" class="btn btn-bluee">Guardar</button>
+                            <button id="btn-save" class="btn btn-bluee">Guardar</button>
                         </div>
                     </div>
-                </form>
+                </div>
 
             </div>
 

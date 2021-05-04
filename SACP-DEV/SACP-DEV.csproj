@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="wwwroot\Custom\" />
     <Folder Include="BL\" />
     <Folder Include="Views\Equipos\" />
@@ -22,6 +18,9 @@
     <Folder Include="wwwroot\js\Prestamos\" />
     <Folder Include="wwwroot\js\Proveedores\" />
     <Folder Include="wwwroot\js\Resguardo\" />
+    <Folder Include="DAL\" />
+    <Folder Include="BO\" />
+    <Folder Include="BO\Constant\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Resguardos\Index.cshtml" />
@@ -30,5 +29,8 @@
     <Content Remove="Views\Equipos\Index.cshtml" />
     <Content Remove="Views\Prestamos\PrestamoActivos.html" />
     <Content Remove="Views\Prestamos\EmptyHtmlFile.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.24" />
   </ItemGroup>
 </Project>

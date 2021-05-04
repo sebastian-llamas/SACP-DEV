@@ -1,19 +1,20 @@
 ﻿$(document).ready(function () {
-
-    $('#e2').select2();
-    $('#e3').select2();
+    var EditLflag = 0;
+    InitSelect();
     var table = $("#AlumTable").DataTable({
         dom: 'Bfrtip',
         bPaginate: true,
         bLengthChange: false,
         bInfo: false,
         bAutoWidth: false,
-        language: {search:"<b>Buscar</b>"},
+        language: { search: "<b>Buscar</b>" },
         buttons: [
             {
                 text: 'Crear',
                 className: 'btn-gray mt-10',
                 action: function (e, dt, node, config) {
+                    EditLflag = 0;
+                    $('#InpMatricula').prop('disabled', false);
                     WModal();
                 }
             },
@@ -21,6 +22,7 @@
                 text: 'Editar',
                 className: 'btn-blue mt-10',
                 action: function (e, dt, node, config) {
+                    EditLflag = 1;
                     Editar();
                 }
             },
@@ -44,13 +46,36 @@
                         }
                     });
 
-                    
+
                 }
             },
             {
                 extend: 'excel',
                 text: 'Excel',
                 className: 'btn-green mt-10'
+            }
+        ],
+        columns: [
+            { data: "enrollment" },
+            { data: "fullname" },
+            { data: "grade" },
+            { data: "email" },
+            { data: "phone" },
+            { data: "createD_BY" },
+            { data: "createD_ON" },
+            { data: "lasT_NAME" },
+            { data: "name" }
+        ],
+        columnDefs: [
+            {
+                "targets": [7],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [8],
+                "visible": false,
+                "searchable": false
             }
         ],
         initComplete: function () {
@@ -61,12 +86,47 @@
     });
 
     
-
+    getAlumno();
     $('#AlumTable tbody').on('click', 'tr', function () {
-        $(this).toggleClass('selected');
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
         CheckRow();
     });
 
+    $("#btn-query").click(function () {
+        getAlumno();
+    });
+
+    $("#btn-save").click(function () {
+
+        if ($('#InpMatricula').val().trim().length > 3 && $('#InpNombre').val().trim().length > 3
+            && $('#InpApellido').val().trim().length > 3 && $('#InpEmail').val().trim().length > 3
+            && $('#InpTelefono').val().trim().length > 3 && $('#SlcGroup').val().length > 0) {
+
+            if (EditLflag > 0) {
+                EditUser();
+            } else {
+                
+                AddUser();
+            }
+
+
+        }else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Todos los campos deben de estar llenos',
+                text: ""
+            });
+        }
+
+
+
+    });
 
     function WModal() {
         ResetInputs();
@@ -91,32 +151,29 @@
 
     function DeleteRow() {
        
-        console.log(table.rows('.selected').data().toArray());
-        table.rows('.selected').remove().draw();
-
-        Swal.fire({
-            icon: 'success',
-            title: 'Alumno Eliminado',
-            showConfirmButton: false,
-            timer: 1500
-        });
+        let [user] = table.rows('.selected').data().toArray();
+        
+        
+        DeleteUser(user.enrollment);
+        
+        
     }
 
     function Editar() {
+        $('#InpMatricula').prop('disabled', true);
         $('#NewAlumno').modal('toggle');
+
         ResetInputs();
-        var dataRow = table.rows('.selected').data().toArray();
+        var [dataRow] = table.rows('.selected').data().toArray();
         console.table(table.rows('.selected').data().toArray());
 
-        $('#InpMatricula').val(dataRow[0][0]);
-        var name = dataRow[0][1];
-        var arrName = name.split(" ");
-        $('#InpNombre').val(arrName[0]);
-        $('#InpApellido').val(arrName[1] + " " + arrName[2]);
-        $('#InpEmail').val(dataRow[0][3]);
-        $('#InpTelefono').val(dataRow[0][3]);
-        $('#SlcGroup').val(dataRow[0][2 ]);
-        $('#SlcDocente').val(dataRow[0][5]);
+        $('#InpMatricula').val(dataRow.enrollment);
+        $('#InpNombre').val(dataRow.name);
+        $('#InpApellido').val(dataRow.lasT_NAME);
+        $('#InpEmail').val(dataRow.email);
+        $('#InpTelefono').val(dataRowphone);
+        $('#SlcGroup').val("1").trigger("change");
+        //$('#SlcDocente').val(dataRow[0][5]);
     }
 
     function ResetInputs() {
@@ -125,7 +182,147 @@
         $('#InpApellido').val("");
         $('#InpEmail').val("");
         $('#InpTelefono').val("");
-        $('#SlcGroup').val("");
+        $('#SlcGroup').val("").trigger("change");
         $('#SlcDocente').val("");
+    }
+
+
+    function getAlumno() {
+        $.ajax({
+            url: "/Usuarios/GetAlumno",
+            cache: false,
+            type: "POST",
+            data: {
+                Matricula: $("#e2").val(),
+                Grupo: $("#e3").val(),
+                Status: $("#sltcEstatus").val()
+            },
+            success: function (response) {
+                if (response.length > 0) {
+                    table.clear();
+                    table.rows().remove().draw();
+                    table.rows.add(response).draw();
+                }
+            }
+        });
+    }
+
+    function DeleteUser(UserID) {
+        $.ajax({
+            url: "/Usuarios/DeleteUser",
+            cache: false,
+            type: "POST",
+            data: {
+               User: UserID
+            
+            },
+            success: function (response) {
+                if (response == "OK") {
+                    table.rows('.selected').remove().draw();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Alumno Eliminado',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'No se pudo relizar esta acción',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            }
+        });
+    }
+
+    function AddUser() {
+        $.ajax({
+            url: "/Usuarios/AddUser",
+            cache: false,
+            type: "POST",
+            data: {
+                Matricula: $("#InpMatricula").val(),
+                Name: $("#InpNombre").val(),
+                LastName: $("#InpApellido").val(),
+                Email: $("#InpEmail").val(),
+                Grupo: $("#SlcGroup").val(),
+                Phone: $("#InpTelefono").val()
+            },
+            success: function (response) {
+                switch (response) {
+                    case "OK":
+                        getAlumno();
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Alumno Agregado',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        break;
+                    case "Error":
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'No se pudo relizar esta acción',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        break;
+                    case "FOUND":
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Este Alumno Ya Existe',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        break;
+                }
+            }
+        });
+    }
+
+    function EditUser() {
+        $.ajax({
+            url: "/Usuarios/UpdateUser",
+            cache: false,
+            type: "POST",
+            data: {
+                Matricula: $("#InpMatricula").val(),
+                Name: $("#InpNombre").val(),
+                LastName: $("#InpApellido").val(),
+                Email: $("#InpEmail").val(),
+                Grupo: $("#SlcGroup").val(),
+                Phone: $("#InpTelefono").val()
+            },
+            success: function (response) {
+                switch (response) {
+                    case "OK":
+                        getAlumno();
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Alumno Actualizado',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        break;
+                    case "Error":
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'No se pudo relizar esta acción',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        break;
+                }
+            }
+        });
+    }
+
+    function InitSelect() {
+        $('#e2').select2();
+        $('#e3').select2();
+        $('#SlcGroup').select2(); 
+        $('#sltcEstatus').select2();
     }
 });

@@ -15,5 +15,10 @@ namespace SACP_DEV.Controllers
         {
             return View();
         }
+
+        public IActionResult NuevoProveedor()
+        {
+            return View();
+        }
     }
 }

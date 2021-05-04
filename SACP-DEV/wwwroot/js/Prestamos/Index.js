@@ -1,17 +1,14 @@
-﻿var Usuarios = [{ id: "031711", Nombre: "Sebastian Llamas", Grupo: "10-B", Tutor: "Florecio Lopez", Tutor: "Jose Reyes", cls: "Ingles", Tur:"Matutino" },
-    { id: "031712", Nombre: "Andres Flores", Grupo: "10-B", Tutor: "Florecio Lopez", Tutor: "Jose Reyes", cls: "Programcion", Tur: "Matutino"},
-    { id: "031713", Nombre: "Benjamin Ramirez", Grupo: "10-C", Tutor: "Jose Reyes", cls: "Redes", Tur: "Matutino"}];
+﻿var Usuario;
 
 
 
-var Producto = [{ id: "1234", Foto: "photo1", Producto: "Mac 2012", Description: "Mac 2012 Late", c:1 },
-                { id: "1243", Foto: "photo2", Producto: "Mac 2012", Description: "Mac 2012 Late",c:1 },
-                { id: "1235", Foto: "photo3", Producto: "Mouse Logitech", Description: "Mouse", c:1 },
-                { id: "123", Foto: "photo4", Producto: "Teclado Dell", Description: "Teclado 2020", c:1 }];
+var Producto;
 
 var onHand = [];
 
+
 $(document).ready(function () {
+    InitSelect();
    var tb = $("#AlumTable").DataTable({
         bPaginate: true,
         bLengthChange: false,
@@ -47,40 +44,14 @@ $(document).ready(function () {
     });
 
 
-    $("#inpMar").focus(function () {
-        $(this).keypress(function (e) {
-            if (e.which == 13) {
-                if ($("#inpMar").val().trim().length > 2) {
-                    findProduc($("#inpMar").val());
-                }
-            }
-        });
+    
+    
+    $("#e2").change(function () {
+        if ($("#e2").val() != "") {
+            GetAlumno();
+        }
     });
 
-
-
-    function FindUser(Id) {
-        let valor = Usuarios.filter((val, index, array) => {
-            return val.id == Id; 
-        });
-        if (valor.length > 0) {
-            $("#NameAlum").text(`${valor[0].Nombre}`);
-            $("#matAlum").text(`${valor[0].id}`);
-            $("#GrupoAlum").text(`${valor[0].Grupo}`);
-            $("#turnAlum").text(`${valor[0].Tur}`);
-            $("#classAlum").text(`${valor[0].cls}`);
-            $("#AdvisorAlum").text(`${valor[0].Tutor}`);
-            $("#inpMar").prop('disabled', false);
-
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Alumno no existente',
-                text:"Por favor revisar la matricula"
-            });
-        }
-  
-    }
 
     function ResetUser() {
         $("#NameAlum").text("-");
@@ -124,5 +95,54 @@ $(document).ready(function () {
 
             console.table(tb.rows().data().toArray());
         }
+    }
+
+
+    function GetAlumno() {
+        $.ajax({
+            url: "/Usuarios/GetAlumno",
+            cache: false,
+            type: "POST",
+            data: {
+                Matricula: $("#e2").val(),
+                Grupo: null,
+                Status: null
+            },
+            success: function (response) {
+                [Usuario] = response;
+                PutInforUser(Usuario);
+            }
+        });
+    }
+
+
+    function PutInforUser(Usuario) {
+        $("#NameAlum").text(`${Usuario.fullname}`);
+        $("#matAlum").text(`${Usuario.enrollment}`);
+        $("#GrupoAlum").text(`${Usuario.grade}`);
+        $("#turnAlum").text(`Vespertino`);
+        $("#classAlum").text(`-`);
+        $("#AdvisorAlum").text(`${Usuario.createD_BY}`);
+        $("#inpMar").prop('disabled', false);
+    }
+
+
+    function GetProduct() {
+        $.ajax({
+            url: "/Prestamos/GetPrestamo",
+            cache: false,
+            type: "POST",
+            data: {
+                Marbete: $("#e2").val(),
+                
+            },
+            success: function (response) {
+                [Usuario] = response;
+                PutInforUser(Usuario);
+            }
+        });
+    }
+    function InitSelect() {
+        $('#e2').select2();
     }
 });

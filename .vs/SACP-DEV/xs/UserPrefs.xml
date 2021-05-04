@@ -1,46 +1,38 @@
 ﻿<Properties StartupConfiguration="{3A7B22AC-A2BC-463C-A6E1-E3A07B5007FD}|Default">
   <MonoDevelop.Ide.ItemProperties.SACP-DEV PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="SACP-DEV/Views/Equipos/NuevoEquipo.cshtml">
     <Files>
-      <File FileName="SACP-DEV/obj/Debug/netcoreapp3.1/Razor/Views/Usuarios/Alumno.cshtml.g.cs" Line="6" Column="2" IsPinned="True" />
-      <File FileName="SACP-DEV/wwwroot/js/Prestamos/HistorialPrestamos.js" Line="70" Column="13" />
-      <File FileName="SACP-DEV/Views/Prestamos/HistorialPrestamos.cshtml" Line="162" Column="48" />
-      <File FileName="SACP-DEV/Views/Prestamos/PrestamoActivos.cshtml" Line="105" Column="11" />
-      <File FileName="SACP-DEV/wwwroot/js/Prestamos/PrestamosActivos.js" Line="98" Column="8" />
-      <File FileName="SACP-DEV/wwwroot/Custom/css/style.css" Line="5783" Column="7" />
+      <File FileName="SACP-DEV/Views/Equipos/ListEquipo.cshtml" Line="158" Column="85" />
+      <File FileName="SACP-DEV/wwwroot/js/Equipos/ListEquipos.js" Line="43" Column="13" />
+      <File FileName="SACP-DEV/Views/Equipos/NuevoEquipo.cshtml" Line="66" Column="39" />
+      <File FileName="SACP-DEV/Views/Facturas/NuevaFactura.cshtml" Line="80" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SACP-DEV" expanded="True">
             <Node name="SACP-DEV" expanded="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Prestamos" expanded="True" />
-                <Node name="Usuarios" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="Custom" expanded="True">
-                  <Node name="css" expanded="True" />
+                <Node name="Equipos" expanded="True">
+                  <Node name="NuevoEquipo.cshtml" selected="True" />
                 </Node>
-                <Node name="js" expanded="True">
-                  <Node name="Prestamos" expanded="True">
-                    <Node name="HistorialPrestamos.js" selected="True" />
-                  </Node>
-                  <Node name="Usuarios" expanded="True" />
-                </Node>
+                <Node name="Facturas" expanded="True" />
               </Node>
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/macminihs/Projects/SACP-DEV/SACP-DEV/Controllers/HomeController.cs" relfile="SACP-DEV/Controllers/HomeController.cs" line="29" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
